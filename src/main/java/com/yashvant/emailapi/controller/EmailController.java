@@ -25,6 +25,7 @@ public class EmailController {
     public ResponseEntity<?> sendEmail(@RequestBody EmailRequest request) {
 
         System.out.println("Email Request: " + request);
+        this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo());
         return ResponseEntity.ok().body("Email sent successfully...");
 
         /*boolean result = this.emailService.sendEmail(request.getSubject(), request.getMessage(),);
