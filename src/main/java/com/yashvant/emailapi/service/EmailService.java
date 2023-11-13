@@ -9,9 +9,13 @@ import java.util.Properties;
 @Service
 public class EmailService {
 
+
+
     public boolean sendEmail(String subject, String message, String to) {
 
         boolean f = false;
+
+        utils util = new utils();
 
         String from = "yashvantyadav855@gmail.com";
 
@@ -27,7 +31,7 @@ public class EmailService {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("yashvantyadav855@gmail.com", "xshs vivb aebv yzgq");
+                return new PasswordAuthentication("yashvantyadav855@gmail.com", util.getPassword());
         }
         });
 
