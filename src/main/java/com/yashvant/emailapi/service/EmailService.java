@@ -1,15 +1,17 @@
 package com.yashvant.emailapi.service;
 import org.springframework.stereotype.Service;
 
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 @Service
 public class EmailService {
 
-    public void sendEmail(String subject, String message, String to) {
+    public boolean sendEmail(String subject, String message, String to) {
+
+        boolean f = false;
 
         String from = "yashvantyadav855@gmail.com";
 
@@ -30,6 +32,29 @@ public class EmailService {
         });
 
         session.setDebug(true);
+
+        MimeMessage m = new MimeMessage(session);
+
+        try {
+            m.setFrom(from);
+
+            m.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+            m.setSubject(subject);
+
+            m.setText(message);
+
+            Transport.send(m);
+
+            System.out.println("Sent success...................");
+
+            f = true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return f;
 
     }
 
