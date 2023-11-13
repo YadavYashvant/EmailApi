@@ -1,27 +1,27 @@
-package com.yashvant.emailapi;
+package com.yashvant.emailapi.model;
 
 public class EmailRequest {
 
-    private String from;
+    private String to;
     private String subject;
     private String message;
 
-    public EmailRequest(String from, String subject, String message) {
-        this.from = from;
+    public EmailRequest() {
+
+    }
+
+    public EmailRequest(String to, String subject, String message) {
+        this.to = to;
         this.subject = subject;
         this.message = message;
-
     }
 
-    public EmailRequest() {
+    public String getTo() {
+        return to;
     }
 
-    public String getFrom() {
-        return from;
-    }
-
-    public void setFrom(String from) {
-        this.from = from;
+    public void setTo(String to) {
+        this.to = to;
     }
 
     public String getSubject() {
@@ -43,7 +43,7 @@ public class EmailRequest {
     @Override
     public String toString() {
         return "EmailRequest{" +
-                "from='" + from + '\'' +
+                "to='" + to + '\'' +
                 ", subject='" + subject + '\'' +
                 ", message='" + message + '\'' +
                 '}';
