@@ -20,7 +20,7 @@ public class EmailController {
         return "Welcome to Email API";
     }
 
-    //api to send email
+    //Api to send email
     @PostMapping("/sendEmail")
     public ResponseEntity<?> sendEmail(@RequestBody EmailRequest request) {
 
