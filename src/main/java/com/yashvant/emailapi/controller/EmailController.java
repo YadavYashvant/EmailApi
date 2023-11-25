@@ -25,8 +25,13 @@ public class EmailController {
     public ResponseEntity<?> sendEmail(@RequestBody EmailRequest request) {
 
         System.out.println("Email Request: " + request);
-        this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo());
-        return ResponseEntity.ok().body("Email sent successfully...");
+        boolean result = this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo());
+
+        if(result) {
+            return ResponseEntity.ok().body("Email sent successfully...");
+        }else {
+            return ResponseEntity.status(500).body("Email not sent...");
+        }
 
         /*boolean result = this.emailService.sendEmail(request.getSubject(), request.getMessage(),);
         if (result) {

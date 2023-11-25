@@ -9,8 +9,6 @@ import java.util.Properties;
 @Service
 public class EmailService {
 
-
-
     public boolean sendEmail(String subject, String message, String to) {
 
         boolean f = false;
