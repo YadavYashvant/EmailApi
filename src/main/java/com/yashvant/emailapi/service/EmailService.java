@@ -1,4 +1,5 @@
 package com.yashvant.emailapi.service;
+import com.yashvant.emailapi.utils.utils;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -13,6 +14,7 @@ public class EmailService {
 
         boolean f = false;
 
+        /*utils util = new utils();*/
         utils util = new utils();
 
         String from = "yashvantyadav855@gmail.com";

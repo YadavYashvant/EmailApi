@@ -15,7 +15,7 @@ function App() {
     <div className="w-full h-[700px] px-8 rounded-3xl flex flex-col justify-center items-center bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
       <Input
         className='w-full block '
-        label="Email"
+        label=""
         isClearable
         radius="lg"
         classNames={{
@@ -39,13 +39,13 @@ function App() {
             "!cursor-text",
           ],
         }}
-        placeholder="Enter your email"
+        placeholder="Enter recipient's mail"
         
       />
 
       <Input
         className='w-full block my-5 py-5'
-        label="Email"
+        label=""
         isClearable
         radius="lg"
         classNames={{
@@ -69,7 +69,7 @@ function App() {
             "!cursor-text",
           ],
         }}
-        placeholder="Enter your email"
+        placeholder="Enter short and precise subject"
         
       />
 
@@ -101,8 +101,6 @@ function App() {
         }}
        
       />
-
-      
       
     </div>
     </NextUIProvider>
