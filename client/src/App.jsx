@@ -3,11 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { NextUIProvider } from '@nextui-org/react'
-import './components/form'
+import './components/form.jsx'
 
 import { Button,Input,Textarea } from '@nextui-org/react'
 import { ToastContainer,toast } from 'react-toastify'
-import AddCourse from './components/form'
+import AddCourse from './components/form.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
